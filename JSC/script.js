@@ -1,12 +1,13 @@
-const submitBtn = document.querySelector(".submit-btn");
+const whatsapp = document.querySelector(".whatsapp");
+const mail = document.querySelector(".mail");
 const name = document.querySelector("#faculty");
 const fId = document.querySelector("#facultId");
 const dprt = document.querySelector("#dprt");
 const date = document.querySelector("#date");
 const venue = document.querySelector("#venue");
 
-submitBtn.addEventListener("click", handleWhatsAppSubmit);
-submitBtn.addEventListener("click", handleMailSubmit);
+whatsapp.addEventListener("click", handleWhatsAppSubmit);
+mail.addEventListener("click", handleMailSubmit);
 
 function handleMailSubmit(e) {
   e.preventDefault();
