@@ -74,6 +74,17 @@ label {
   font-size: 1.2rem;
   margin: 10px;
 }
+
+.check-box-wrapper input{
+  display: inline;
+  margin: 0 0 0 15px;
+}
+.venue-box{
+  border-color: red;
+}
+.check-box-wrapper{
+  margin: 3px 0;
+}
 hr {
   border-color: black;
 }

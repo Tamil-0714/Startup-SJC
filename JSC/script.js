@@ -4,19 +4,23 @@ const name = document.querySelector("#faculty");
 const fId = document.querySelector("#facultId");
 const dprt = document.querySelector("#dprt");
 const date = document.querySelector("#date");
-const venue = document.querySelector("#venue");
+// const venue = document.querySelector("#venue");
+const venues = document.querySelectorAll(".venue-box");
+const venueLabels = document.querySelectorAll(".venue-labels");
+console.log(venues);
 
 whatsapp.addEventListener("click", handleWhatsAppSubmit);
 mail.addEventListener("click", handleMailSubmit);
 
 function handleMailSubmit(e) {
   e.preventDefault();
-  if (!vaidData()) return;
+  const selectedVenues = checkedVenues();
+  if (!vaidData(selectedVenues)) return;
   const jsonData = {
     fName: name.value,
     dprt: dprt.value,
     date: date.value,
-    venue: venue.value,
+    venue: JSON.stringify(selectedVenues),
     FaucltId: fId.value,
   };
   const eMail = "tamil.tj.1967@gmail.com";
@@ -32,12 +36,14 @@ function handleMailSubmit(e) {
 
 function handleWhatsAppSubmit(e) {
   e.preventDefault();
-  if (!vaidData()) return;
+  const selectedVenues = checkedVenues();
+
+  if (!vaidData(selectedVenues)) return;
   const jsonData = {
     fName: name.value,
     dprt: dprt.value,
     date: date.value,
-    venue: venue.value,
+    venue: JSON.stringify(selectedVenues),
     FaucltId: fId.value,
   };
   const phoneNumber = "+919943112938";
@@ -51,12 +57,12 @@ function handleWhatsAppSubmit(e) {
   +window.open(whatsappURL);
 }
 
-function vaidData() {
+function vaidData(venueVal) {
   const nameVal = name.value.trim();
   const fIdVal = fId.value.trim();
   const dprtVal = dprt.value.trim();
   const dateVal = date.value.trim();
-  const venueVal = venue.value.trim();
+  // const venueVal = venue.value.trim();
 
   if (!nameVal) {
     name.style.borderColor = "red";
@@ -83,13 +89,28 @@ function vaidData() {
     date.style.borderColor = "black";
   }
 
-  if (venueVal === "none") {
-    venue.style.borderColor = "red";
+  if (venueVal.length === 0) {
+    console.log(venueVal);
+    venueLabels.forEach((venue) => {
+      venue.style.border = "1px solid red";
+    });
     return false;
   } else {
-    venue.style.borderColor = "black";
+    venueLabels.forEach((venue) => {
+      venue.style.border = "none";
+    });
   }
   return true;
+}
+
+function checkedVenues() {
+  const checedVenues = [];
+  venues.forEach((e) => {
+    if (e.checked) {
+      checedVenues.push(e.id);
+    }
+  });
+  return checedVenues;
 }
 
 // function validateHelper(e) {

@@ -9,7 +9,6 @@
 
     <!-- AOS CSS Lib -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
   </head>
   <body>
     <div
@@ -77,14 +76,31 @@
           </select>
           <label for="date">Date of the event </label>
           <input type="date" id="date" autocomplete="off" />
-          <label for="venue">Venue</label>
-          <select venue="" id="venue">
+          <div class="venue-container">
+            <div class="check-box-wrapper">
+              <input class="venue-box" type="checkbox" id="lawley-hall" />
+              <label for="lawley-hall" class="venue-labels">LAWLEY HALL</label>
+            </div>
+            <div class="check-box-wrapper">
+              <input class="venue-box" type="checkbox" id="sail-auditorium" />
+              <label for="sail-auditorium" class="venue-labels">SAIL AUDITORIUM</label>
+            </div>
+            <div class="check-box-wrapper">
+              <input class="venue-box" type="checkbox" id="jubile-hall" />
+              <label for="jubile-hall" class="venue-labels">JUIBILE HALL</label>
+            </div>
+            <div class="check-box-wrapper">
+              <input class="venue-box" type="checkbox" id="community-center" />
+              <label for="community-center" class="venue-labels">COMMUNITY CENTER</label>
+            </div>
+          </div>
+          <!-- <select venue="" id="venue">
             <option value="none">Select venue</option>
             <option value="lawley hall">LAWLEY HALL</option>
             <option value="sail auditorium">SAIL AUDITORIUM</option>
             <option value="jubile hall">JUIBILE HALL</option>
             <option value="community center">COMMUNITY CENTER</option>
-          </select>
+          </select> -->
           <hr />
           <div class="btn-container">
             <button type="submit" class="submit-btn whatsapp">
