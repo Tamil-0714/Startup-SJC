@@ -46,7 +46,7 @@ function handleWhatsAppSubmit(e) {
     venue: JSON.stringify(selectedVenues),
     FaucltId: fId.value,
   };
-  const phoneNumber = "+919943112938";
+  const phoneNumber = "+919500804488";
 
   const whatsappURL =
     `https://wa.me/${phoneNumber}?text=Facult Name: ${jsonData.fName}%0A%0A` +
